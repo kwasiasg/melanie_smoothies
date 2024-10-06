@@ -48,3 +48,7 @@ if ingredients_list :
 
        st.success(f"Your Smoothie is ordered! Name: {name_on_order}")
        my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
+
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)
